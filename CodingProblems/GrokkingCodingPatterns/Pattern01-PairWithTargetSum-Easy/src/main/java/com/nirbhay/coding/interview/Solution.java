@@ -1,5 +1,7 @@
 package com.nirbhay.coding.interview;
 
+import java.util.HashMap;
+
 class Solution {
 
     /**
@@ -73,17 +75,45 @@ class Solution {
         return -1;
     }
 
+
+    /**
+     * Time Complexity:
+     * <br>
+     * The time complexity of the above algorithm will be O(N), where ‘N’ is the total number of elements in the given array.
+     * <br>
+     * <br>
+     * Space Complexity:
+     * <br>
+     * The space complexity will also be O(N), as, in the worst case, we will be pushing ‘N’ numbers in the HashTable.
+     */
+    private static int[] twoSumUsingHashMap(int[] arr, int target) {
+        HashMap<Integer, Integer> nums = new HashMap(); // to store numbers (arr elements) as key and indices as value
+        for (int i = 0; i < arr.length; i++) {
+            int complement = target - arr[i];
+            if (nums.containsKey(complement))
+                return new int[] {nums.get(complement), i}; // return the arr with {index of complement of element at index i, index i}
+            else
+                nums.put(arr[i], i); // put the number as key and index as value in the map
+        }
+        return new int[] {-1, -1};
+    }
+
     public static void main(String[] args) {
-        // Solution using 2 pointer approach
-        int[] result = Solution.twoSumUsing2Pointers(new int[] { 1, 2, 3, 4, 5, 6, 7, 8 }, 6);
+        // Solution using 2 pointer approach - Time complexity is O(N)
+        int[] result = Solution.twoSumUsing2Pointers(new int[] { 1, 2, 3, 4, 6 }, 6);
         System.out.println("Pair with target sum: [" + result[0] + ", " + result[1] + "]");
         result = Solution.twoSumUsing2Pointers(new int[] { 2, 5, 9, 11 }, 11);
         System.out.println("Pair with target sum: [" + result[0] + ", " + result[1] + "]");
 
         // Solution using Binary Search - Time complexity is O(N logN)
-        result = Solution.twoSumUsingBinarySearch(new int[] { 1, 2, 3, 4, 5, 6, 7, 8 }, 6);
+        result = Solution.twoSumUsingBinarySearch(new int[] { 1, 2, 3, 4, 6 }, 6);
         System.out.println("Pair with target sum: [" + result[0] + ", " + result[1] + "]");
         result = Solution.twoSumUsingBinarySearch(new int[] { 2, 5, 9, 11 }, 11);
+        System.out.println("Pair with target sum: [" + result[0] + ", " + result[1] + "]");
+
+        result = Solution.twoSumUsingHashMap(new int[] { 1, 2, 3, 4, 6 }, 6);
+        System.out.println("Pair with target sum: [" + result[0] + ", " + result[1] + "]");
+        result = Solution.twoSumUsingHashMap(new int[] { 2, 5, 9, 11 }, 11);
         System.out.println("Pair with target sum: [" + result[0] + ", " + result[1] + "]");
     }
 }
