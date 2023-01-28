@@ -4,12 +4,10 @@ class Solution {
 
     /**
      * Time Complexity:
-     * The time complexity of the above algorithm will be O(N), where ‘N’ is the total number of elements in the given
-     * array.
+     * The time complexity of the above algorithm will be O(N), where ‘N’ is the total number of elements in the given array.
      *
-     * Explanation : In the worst-case, the 'left' pointer could remain static at 0 index and the 'right' pointer needs
-     * to be decremented until it reaches the 1 index (or vice-versa where 'right' remains static and 'left' is
-     * incremented), thus covering the entire array length 'N'.
+     * Explanation : In the worst-case, the 'left' pointer could remain static at 0 index and the 'right' pointer needs to be decremented until it
+     * reaches the 1 index (or vice-versa where 'right' remains static and 'left' is incremented), thus covering the entire array length 'N'.
      *
      * Space Complexity:
      * The algorithm runs in constant space O(1).
