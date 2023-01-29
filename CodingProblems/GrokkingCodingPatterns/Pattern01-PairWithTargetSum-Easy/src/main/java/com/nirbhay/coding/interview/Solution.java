@@ -99,7 +99,7 @@ class Solution {
     }
 
     public static void main(String[] args) {
-        // Solution using 2 pointer approach - Time complexity is O(N)
+        // Solution using 2 pointer approach - Time complexity is O(N) and space complexity is constant O(1)
         int[] result = Solution.twoSumUsing2Pointers(new int[] { 1, 2, 3, 4, 6 }, 6);
         System.out.println("Pair with target sum: [" + result[0] + ", " + result[1] + "]");
         result = Solution.twoSumUsing2Pointers(new int[] { 2, 5, 9, 11 }, 11);
@@ -111,6 +111,7 @@ class Solution {
         result = Solution.twoSumUsingBinarySearch(new int[] { 2, 5, 9, 11 }, 11);
         System.out.println("Pair with target sum: [" + result[0] + ", " + result[1] + "]");
 
+        // Solution using HashMap - Time complexity is O(N) and space complexity is O(N)
         result = Solution.twoSumUsingHashMap(new int[] { 1, 2, 3, 4, 6 }, 6);
         System.out.println("Pair with target sum: [" + result[0] + ", " + result[1] + "]");
         result = Solution.twoSumUsingHashMap(new int[] { 2, 5, 9, 11 }, 11);
