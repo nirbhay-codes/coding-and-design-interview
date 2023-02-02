@@ -3,3 +3,5 @@
 - Leetcode - actual https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/
 - Leetcode (unsorted) - https://leetcode.com/problems/two-sum/description/
   - The HashMap solution works for unsorted arrays also. 
+- Progress tracker - #1 and #120
+  - ![img.png](img.png)
